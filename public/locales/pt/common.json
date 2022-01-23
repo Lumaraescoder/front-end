@@ -1,0 +1,10 @@
+{
+  "home": "Página Inicial",
+  "about": "Sobre nós",
+  "h1": "Exemplo simples",
+  "change-locale": "Alterar idioma",
+  "to-second-page": "Para segunda pagina",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server",
+  "title": "Pagina inicial | next-i18next"
+}

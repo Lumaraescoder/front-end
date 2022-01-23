@@ -1,0 +1,16 @@
+{
+  "baseUrl": "http://localhost:3000/",
+  "fixturesFolder": "test/fixtures",
+  "integrationFolder": "test/spec",
+  "supportFile": "test/support/index.ts",
+  "pluginsFile": false,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "test/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  },
+  "screenshotOnRunFailure": false,
+  "videosFolder": "test/videos"
+}
