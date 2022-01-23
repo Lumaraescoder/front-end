@@ -4,6 +4,7 @@ import { Navbar, Hamburger, Sidebar, MenuLinks, Header } from './Navigation.styl
 import { Row, Col } from 'antd';
 import { useMediaQuery } from '@util/mediaQuery';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 const Navigation = (props) => {
   const pages = Object.values(props);
@@ -11,9 +12,10 @@ const Navigation = (props) => {
   const [toggle, setToggle] = useState(false);
   const toggleSidebar = () => setToggle(!toggle);
   const isBreakpoint = useMediaQuery(768);
+  const router = useRouter();
+  const isLinkActive = (pathname: string) => router.pathname === pathname;
 
   const renderMenu = (page, index) => {
-    console.log(page);
     return (
       <li  key={index} onClick={() => toggleSidebar()}>
         <Link href={ page.URL }>
@@ -37,14 +39,16 @@ const Navigation = (props) => {
               </Hamburger>
               <Sidebar className={['sidebar', toggle ? 'active' : null]}>
                 <MenuLinks className={'menu'}>
-                  { pages.map((link, index) => renderMenu(link, index)) }
+                  <li>link 1</li>
+                  <li>link 2</li>
                 </MenuLinks>
               </Sidebar>
             </>
           ) : (
             <>
               <MenuLinks className={'menu'}>
-                { pages.map((link, index) => renderMenu(link, index)) }
+                <li>link 1</li>
+                <li>link 2</li>
               </MenuLinks>
             </>
           )}

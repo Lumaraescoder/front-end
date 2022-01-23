@@ -6,7 +6,7 @@
     "mochawesome-merge": "bin/mochawesome-merge.js"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next -p 8080",
     "build": "next build",
     "start": "next start",
     "cypress:run": "cypress run",

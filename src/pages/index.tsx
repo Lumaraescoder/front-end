@@ -20,7 +20,7 @@ const Homepage = () => {
         <Navigation {...ROUTES}/>
         <Header title={t('title')} description={''} />
         <div>
-          <Link
+          {/* <Link
             href='/'
             locale={router.locale === 'en' ? 'pt' : 'en'}
           >
@@ -34,7 +34,7 @@ const Homepage = () => {
             >
               {t('to-second-page')}
             </button>
-          </Link>
+          </Link> */}
         </div>
       </main>
       <Footer />
