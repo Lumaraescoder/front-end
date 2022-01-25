@@ -4,8 +4,8 @@ export const ROUTES = {
     URL:'/',
     LABEL: 'home'
   },
-  ABOUT:{
-    URL:'/about',
-    LABEL: 'about'
+  CART:{
+    URL:'/cart',
+    LABEL: 'Cart'
   }
 };

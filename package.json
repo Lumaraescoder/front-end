@@ -6,7 +6,7 @@
     "mochawesome-merge": "bin/mochawesome-merge.js"
   },
   "scripts": {
-    "dev": "next -p 8080",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "cypress:run": "cypress run",
@@ -14,7 +14,7 @@
     "lint": "npm run lint:scss && npm run lint:js",
     "lint:scss": "stylelint 'app/**/*.scss' --syntax scss --fix ; exit 0",
     "lint:js": "eslint . --ext .tsx",
-    "test:unit": "jest --passWithNoTests",
+    "test:unit": "jest --passWithNoTests --verbose ./src/__tests__  ",
     "test:unit:update": "jest --passWithNoTests --updateSnapshot",
     "type:check": "tsc",
     "delete:reports": "rm test/results || true",

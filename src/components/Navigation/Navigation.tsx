@@ -1,29 +1,21 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { Navbar, Hamburger, Sidebar, MenuLinks, Header } from './Navigation.styles';
+import { Navbar, Hamburger, Sidebar, MenuLinks, Header,MenuContainer, MenuIconBadge } from './Navigation.styles';
 import { Row, Col } from 'antd';
 import { useMediaQuery } from '@util/mediaQuery';
-import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+import { IconBagActive, IconBagInactive } from 'helpers/helpers';
+import { useApp } from 'contexts/AppContexts';
+import { getTotalItems } from '@util/operators';
 
 const Navigation = (props) => {
-  const pages = Object.values(props);
-  const { t } = useTranslation('common');
   const [toggle, setToggle] = useState(false);
   const toggleSidebar = () => setToggle(!toggle);
   const isBreakpoint = useMediaQuery(768);
   const router = useRouter();
   const isLinkActive = (pathname: string) => router.pathname === pathname;
-
-  const renderMenu = (page, index) => {
-    return (
-      <li  key={index} onClick={() => toggleSidebar()}>
-        <Link href={ page.URL }>
-          <a>{ t(page.LABEL) }</a>
-        </Link>
-      </li>
-    );
-  };
+  const { cart } = useApp();
+  const totalItems = getTotalItems(cart);
 
   return (
     <Row>
@@ -39,23 +31,36 @@ const Navigation = (props) => {
               </Hamburger>
               <Sidebar className={['sidebar', toggle ? 'active' : null]}>
                 <MenuLinks className={'menu'}>
-                  <li>link 1</li>
-                  <li>link 2</li>
+                  <Link href="/">
+                    <li>Home</li>
+                  </Link>
+                  <Link href="/cart">
+                  <MenuContainer>
+                    {isLinkActive('/cart') ? <IconBagActive/> : <IconBagInactive/>}
+                    {!!totalItems && <MenuIconBadge>{totalItems}</MenuIconBadge>}
+                  </MenuContainer>
+                </Link>
                 </MenuLinks>
               </Sidebar>
             </>
           ) : (
             <>
               <MenuLinks className={'menu'}>
-                <li>link 1</li>
-                <li>link 2</li>
+                <Link href="/">
+                  <li>Home</li>
+                </Link>
+                <Link href="/cart">
+                  <MenuContainer>
+                    {isLinkActive('/cart') ? <IconBagActive/> : <IconBagInactive/>}
+                    {!!totalItems && <MenuIconBadge>{totalItems}</MenuIconBadge>}
+                  </MenuContainer>
+                </Link>
               </MenuLinks>
             </>
           )}
         </Navbar>
       </Col>
     </Row>
-
   );
 };
 

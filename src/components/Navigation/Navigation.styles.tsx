@@ -3,15 +3,14 @@ export const Header =  styled.header`
 
 `;
 
-
 export const Navbar = styled.nav`
-  background: red;
-  position: relative;
+  position: fixed;
   display: flex;
   align-items:center;
   justify-content: flex-end;
   height: 90px;
   width: 100%;
+  border: solid 1px;
 `;
 
 
@@ -53,8 +52,42 @@ export const MenuLinks = styled.ul`
   li {
     margin:5px;
   }
-/* On screens that are 600px or less, set the background color to olive */
 @media screen and (min-width: 768px) {
   flex-direction: row;
 }
+`;
+
+
+export const MenuContainer = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.625rem;
+  justify-content: center;
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.75;
+  }
+`;
+
+export const MenuIconBadge = styled.span`
+  position: absolute;
+  top: 7px;
+  border-radius: 50%;
+  margin-left: 26px;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  background-color: #e50b20;
+  -moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  padding-top: 0.15rem;
 `;

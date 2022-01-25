@@ -27,6 +27,7 @@
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/explicit-module-boundary-types": ["off"],
         "react/prop-types": 0,
+        "no-empty": [true, "allow-empty-functions", "allow-empty-catch"],
         "react/react-in-jsx-scope": 0,
         "indent": [
             "error",

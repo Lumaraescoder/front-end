@@ -19,23 +19,9 @@ const Homepage = () => {
       <main>
         <Navigation {...ROUTES}/>
         <Header title={t('title')} description={''} />
-        <div>
-          {/* <Link
-            href='/'
-            locale={router.locale === 'en' ? 'pt' : 'en'}
-          >
-            <button>
-              {t('change-locale')}
-            </button>
-          </Link>
-          <Link href='/about'>
-            <button
-              type='button'
-            >
-              {t('to-second-page')}
-            </button>
-          </Link> */}
-        </div>
+        <>
+   
+        </>
       </main>
       <Footer />
     </>
