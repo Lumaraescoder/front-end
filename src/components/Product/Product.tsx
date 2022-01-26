@@ -12,7 +12,7 @@ const getProducts = async (): Promise<CartItemType[]> => {
   return await (await fetch("https://fakestoreapi.com/products")).json();
 };
 
-const App = () => {
+const ProductList = () => {
 
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
@@ -82,4 +82,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ProductList;

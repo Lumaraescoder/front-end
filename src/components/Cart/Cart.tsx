@@ -23,10 +23,11 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
             {cartItems.length === 0 ? <p>No items in cart.</p> : null}
             {cartItems.map((item: CartItemType) => 
                 <CartItem 
-                    key={item.id}
-                    item={item}
-                    addToCart={addToCart}
-                    removeFromCart={removeFromCart}
+                key={item.id}
+                item={item}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+ 
                 />
             )}
             <h2>Total: $ {calculateTotal(cartItems).toFixed(2)}</h2>
