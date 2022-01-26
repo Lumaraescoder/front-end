@@ -8,6 +8,7 @@ import { ROUTES } from '@constant/index';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ProductList from 'components/Product/Product';
 
 const Homepage = () => {
 
@@ -19,9 +20,7 @@ const Homepage = () => {
       <main>
         <Navigation {...ROUTES}/>
         <Header title={t('title')} description={''} />
-        <>
-   
-        </>
+        <ProductList/>
       </main>
       <Footer />
     </>

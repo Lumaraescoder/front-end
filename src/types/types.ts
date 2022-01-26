@@ -1,11 +1,14 @@
-export interface IProduct {
- id: string;
- name: string;
- price: string;
- image: string;
- stock: number;
-}
 
-export interface ICartProduct extends IProduct {
- count: number;
-}
+export type CartItemType = {
+ id: number;
+ title: string;
+ price: number;
+ description: string;
+ category: string;
+ image: string;
+ amount: number;
+ rating: {
+  rate: number;
+  count: number;
+ }
+};
