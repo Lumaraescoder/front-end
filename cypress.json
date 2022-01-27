@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://fakestoreapi.com",
+  "baseUrl": "http://localhost:3000/",
   "fixturesFolder": "test/fixtures",
   "integrationFolder": "test/spec",
   "supportFile": "test/support/index.ts",

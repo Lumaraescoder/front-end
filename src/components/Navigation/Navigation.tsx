@@ -4,18 +4,12 @@ import { Navbar, Hamburger, Sidebar, MenuLinks, Header,MenuContainer, MenuIconBa
 import { Row, Col } from 'antd';
 import { useMediaQuery } from '@util/mediaQuery';
 import { useRouter } from 'next/router';
-import { IconBagActive, IconBagInactive } from 'helpers/helpers';
-import { useApp } from 'contexts/AppContexts';
-import { getTotalItems } from '@util/operators';
 
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(false);
   const toggleSidebar = () => setToggle(!toggle);
   const isBreakpoint = useMediaQuery(768);
   const router = useRouter();
-  const isLinkActive = (pathname: string) => router.pathname === pathname;
-  const { cart } = useApp();
-  const totalItems = getTotalItems(cart);
 
   return (
     <Row>
@@ -36,8 +30,7 @@ const Navigation = (props) => {
                   </Link>
                   <Link href="/cart">
                   <MenuContainer>
-                    {isLinkActive('/cart') ? <IconBagActive/> : <IconBagInactive/>}
-                    {!!totalItems && <MenuIconBadge>{totalItems}</MenuIconBadge>}
+                  
                   </MenuContainer>
                 </Link>
                 </MenuLinks>
@@ -51,8 +44,6 @@ const Navigation = (props) => {
                 </Link>
                 <Link href="/cart">
                   <MenuContainer>
-                    {isLinkActive('/cart') ? <IconBagActive/> : <IconBagInactive/>}
-                    {!!totalItems && <MenuIconBadge>{totalItems}</MenuIconBadge>}
                   </MenuContainer>
                 </Link>
               </MenuLinks>

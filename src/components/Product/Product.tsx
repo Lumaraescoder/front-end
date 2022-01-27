@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { useQuery } from "react-query";
-import { Drawer, LinearProgress, Grid, Badge } from "@material-ui/core";
-import { StyledButton } from "../../styles/styles";
-import Item from "components/Item/Item";
-import Cart from "components/Cart/Cart";
+import { useState } from 'react';
+import { useQuery } from 'react-query';
+import { Drawer, LinearProgress, Grid, Badge } from '@material-ui/core';
+import { StyledButton } from '../../styles/styles';
+import Item from "../Item/Item";
+import Cart from "../Cart/Cart";
 import { CartItemType } from "types/types";
 import { SAddShoppingCartSharp } from "./ProductStyled";
 import Container from "@mui/material/Container";
 
-const getProducts = async (): Promise<CartItemType[]> => {
+export const getProducts = async (): Promise<CartItemType[]> => {
   return await (await fetch("https://fakestoreapi.com/products")).json();
 };
 
-const ProductList = () => {
+ const ProductList = () => {
 
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
@@ -56,7 +56,7 @@ const ProductList = () => {
   return (
     <>
     <Container>
-      <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+      <Drawer  anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
         <Cart
           cartItems={cartItems}
           addToCart={handleAddToCart}
